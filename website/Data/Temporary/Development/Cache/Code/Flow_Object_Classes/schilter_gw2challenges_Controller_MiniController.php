@@ -43,11 +43,26 @@ class MiniController_Original extends ActionController
 	}
 
 	public function reLoadAction(){
-		\Neos\FLow\var_dump($this->securityContext->getAccount());
-		$user = $this->userRepository->findByAccount($this->securityContext->getAccount());
-		\Neos\FLow\var_dump($user);
-		die();
-		$minis = json_decode(file_get_contents(self::MINI_URL.$user->getApiKey()), true);
+		if($this->securityContext->getAccount()){
+			$user = $this->userRepository->findByAccount($this->securityContext->getAccount());			
+			if($user->getApiKey()){
+				try {
+					$minis = json_decode(file_get_contents(self::MINI_URL.$user->getApiKey()), true);
+					$user->setMinis($minis);
+					$this->userRepository->update($user);
+				}
+				catch(\Exception $e){
+					$this->addFlashMessage('Could not fetch data, Api Key might be wrong', 'Error', \Neos\Error\Messages\Message::SEVERITY_ERROR);
+				}
+			}
+			else{
+				$this->addFlashMessage('Please set you Api Key first', 'Error', \Neos\Error\Messages\Message::SEVERITY_ERROR);
+			}			
+		}
+		else{
+			$this->addFlashMessage('Please Log in first', 'Error', \Neos\Error\Messages\Message::SEVERITY_ERROR);
+		}
+		$this->redirect('index');
 	}
 }
 #

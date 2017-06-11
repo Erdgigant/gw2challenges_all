@@ -181,6 +181,28 @@ class User extends \schilter\gw2challenges\Domain\Model\User implements \Doctrin
     /**
      * {@inheritDoc}
      */
+    public function getId()
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getId', []);
+
+        return parent::getId();
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function setId($id)
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'setId', [$id]);
+
+        return parent::setId($id);
+    }
+
+    /**
+     * {@inheritDoc}
+     */
     public function getAccount()
     {
 

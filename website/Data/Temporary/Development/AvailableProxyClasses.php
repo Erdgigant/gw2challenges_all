@@ -395,6 +395,7 @@ return array (
   'schilter_gw2challenges_Command_Gw2apiCommandController' => true,
   'schilter_gw2challenges_Controller_MiniController' => true,
   'schilter_gw2challenges_Controller_ChallengeController' => true,
+  'schilter_gw2challenges_Controller_UserController' => true,
   'Neos_Welcome_Controller_StandardController' => true,
   'Neos_Kickstarter_Package' => true,
   'Neos_Kickstarter_Service_GeneratorService' => true,

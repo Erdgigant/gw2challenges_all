@@ -1,0 +1,107 @@
+Exception #1301610453: Could not resolve a route and its corresponding URI for the given parameters. This may be due to referring to a not existing package / controller / action while building a link or URI. Refer to log and check the backtrace for more details.
+
+36 Neos\FluidAdaptor\ViewHelpers\Link\ActionViewHelper_Original::render("login", array|0|, "Login", "Sandstorm.UserManagment", NULL, "", "", array|0|, FALSE, array|0|, FALSE, TRUE, FALSE)
+35 call_user_func_array(array|2|, array|13|)
+34 Neos\FluidAdaptor\Core\ViewHelper\AbstractViewHelper::callRenderMethod()
+33 TYPO3Fluid\Fluid\Core\ViewHelper\AbstractViewHelper::initializeArgumentsAndRender()
+32 TYPO3Fluid\Fluid\Core\ViewHelper\ViewHelperInvoker::invoke(Neos\FluidAdaptor\ViewHelpers\Link\ActionViewHelper, array|3|, Neos\FluidAdaptor\Core\Rendering\RenderingContext)
+31 TYPO3Fluid\Fluid\Core\Parser\SyntaxTree\ViewHelperNode::evaluate(Neos\FluidAdaptor\Core\Rendering\RenderingContext)
+30 TYPO3Fluid\Fluid\Core\Parser\SyntaxTree\AbstractNode::evaluateChildNode(TYPO3Fluid\Fluid\Core\Parser\SyntaxTree\ViewHelperNode, Neos\FluidAdaptor\Core\Rendering\RenderingContext, TRUE)
+29 TYPO3Fluid\Fluid\Core\Parser\SyntaxTree\AbstractNode::evaluateChildNodes(Neos\FluidAdaptor\Core\Rendering\RenderingContext)
+28 TYPO3Fluid\Fluid\Core\ViewHelper\AbstractViewHelper::renderChildren()
+27 TYPO3Fluid\Fluid\ViewHelpers\ElseViewHelper::render()
+26 call_user_func(array|2|)
+25 TYPO3Fluid\Fluid\Core\ViewHelper\AbstractViewHelper::callRenderMethod()
+24 TYPO3Fluid\Fluid\Core\ViewHelper\AbstractViewHelper::initializeArgumentsAndRender()
+23 TYPO3Fluid\Fluid\Core\ViewHelper\ViewHelperInvoker::invoke(TYPO3Fluid\Fluid\ViewHelpers\ElseViewHelper, array|0|, Neos\FluidAdaptor\Core\Rendering\RenderingContext)
+22 TYPO3Fluid\Fluid\Core\Parser\SyntaxTree\ViewHelperNode::evaluate(Neos\FluidAdaptor\Core\Rendering\RenderingContext)
+21 Neos\FluidAdaptor\Core\ViewHelper\AbstractConditionViewHelper::renderElseChild()
+20 Sandstorm\UserManagement\ViewHelpers\IfAuthenticatedViewHelper_Original::render("Sandstorm.UserManagement:Login")
+19 call_user_func_array(array|2|, array|1|)
+18 Neos\FluidAdaptor\Core\ViewHelper\AbstractViewHelper::callRenderMethod()
+17 TYPO3Fluid\Fluid\Core\ViewHelper\AbstractViewHelper::initializeArgumentsAndRender()
+16 TYPO3Fluid\Fluid\Core\ViewHelper\ViewHelperInvoker::invoke(Sandstorm\UserManagement\ViewHelpers\IfAuthenticatedViewHelper, array|0|, Neos\FluidAdaptor\Core\Rendering\RenderingContext)
+15 TYPO3Fluid\Fluid\Core\Parser\SyntaxTree\ViewHelperNode::evaluate(Neos\FluidAdaptor\Core\Rendering\RenderingContext)
+14 TYPO3Fluid\Fluid\Core\Parser\SyntaxTree\AbstractNode::evaluateChildNode(TYPO3Fluid\Fluid\Core\Parser\SyntaxTree\ViewHelperNode, Neos\FluidAdaptor\Core\Rendering\RenderingContext, TRUE)
+13 TYPO3Fluid\Fluid\Core\Parser\SyntaxTree\AbstractNode::evaluateChildNodes(Neos\FluidAdaptor\Core\Rendering\RenderingContext)
+12 TYPO3Fluid\Fluid\Core\Parser\SyntaxTree\RootNode::evaluate(Neos\FluidAdaptor\Core\Rendering\RenderingContext)
+11 TYPO3Fluid\Fluid\Core\Parser\ParsingState::render(Neos\FluidAdaptor\Core\Rendering\RenderingContext)
+10 TYPO3Fluid\Fluid\View\AbstractTemplateView::render()
+9 Neos\Flow\Mvc\Controller\ActionController_Original::callActionMethod()
+8 Neos\Flow\Mvc\Controller\ActionController_Original::processRequest(Neos\Flow\Mvc\ActionRequest, Neos\Flow\Http\Response)
+7 Neos\Flow\Mvc\Dispatcher_Original::initiateDispatchLoop(Neos\Flow\Mvc\ActionRequest, Neos\Flow\Http\Response)
+6 Neos\Flow\Mvc\Dispatcher_Original::dispatch(Neos\Flow\Mvc\ActionRequest, Neos\Flow\Http\Response)
+5 Neos\Flow\Mvc\DispatchComponent_Original::handle(Neos\Flow\Http\Component\ComponentContext)
+4 Neos\Flow\Http\Component\ComponentChain_Original::handle(Neos\Flow\Http\Component\ComponentContext)
+3 Neos\Flow\Http\Component\ComponentChain_Original::handle(Neos\Flow\Http\Component\ComponentContext)
+2 Neos\Flow\Http\RequestHandler::handleRequest()
+1 Neos\Flow\Core\Bootstrap::run()
+
+Previous exception: Exception #1301610453 in line 349 of /var/www/php/Data/Temporary/Development/Cache/Code/Flow_Object_Classes/Neos_Flow_Mvc_Routing_UriBuilder.php: Could not resolve a route and its corresponding URI for the given parameters. This may be due to referring to a not existing package / controller / action while building a link or URI. Refer to log and check the backtrace for more details.
+
+39 Neos\Flow\Mvc\Routing\Router_Original::resolve(array|3|)
+38 Neos\Flow\Mvc\Routing\UriBuilder_Original::build(array|3|)
+37 Neos\Flow\Mvc\Routing\UriBuilder_Original::uriFor("login", array|3|, "Login", "Sandstorm.UserManagment", NULL)
+36 Neos\FluidAdaptor\ViewHelpers\Link\ActionViewHelper_Original::render("login", array|0|, "Login", "Sandstorm.UserManagment", NULL, "", "", array|0|, FALSE, array|0|, FALSE, TRUE, FALSE)
+35 call_user_func_array(array|2|, array|13|)
+34 Neos\FluidAdaptor\Core\ViewHelper\AbstractViewHelper::callRenderMethod()
+33 TYPO3Fluid\Fluid\Core\ViewHelper\AbstractViewHelper::initializeArgumentsAndRender()
+32 TYPO3Fluid\Fluid\Core\ViewHelper\ViewHelperInvoker::invoke(Neos\FluidAdaptor\ViewHelpers\Link\ActionViewHelper, array|3|, Neos\FluidAdaptor\Core\Rendering\RenderingContext)
+31 TYPO3Fluid\Fluid\Core\Parser\SyntaxTree\ViewHelperNode::evaluate(Neos\FluidAdaptor\Core\Rendering\RenderingContext)
+30 TYPO3Fluid\Fluid\Core\Parser\SyntaxTree\AbstractNode::evaluateChildNode(TYPO3Fluid\Fluid\Core\Parser\SyntaxTree\ViewHelperNode, Neos\FluidAdaptor\Core\Rendering\RenderingContext, TRUE)
+29 TYPO3Fluid\Fluid\Core\Parser\SyntaxTree\AbstractNode::evaluateChildNodes(Neos\FluidAdaptor\Core\Rendering\RenderingContext)
+28 TYPO3Fluid\Fluid\Core\ViewHelper\AbstractViewHelper::renderChildren()
+27 TYPO3Fluid\Fluid\ViewHelpers\ElseViewHelper::render()
+26 call_user_func(array|2|)
+25 TYPO3Fluid\Fluid\Core\ViewHelper\AbstractViewHelper::callRenderMethod()
+24 TYPO3Fluid\Fluid\Core\ViewHelper\AbstractViewHelper::initializeArgumentsAndRender()
+23 TYPO3Fluid\Fluid\Core\ViewHelper\ViewHelperInvoker::invoke(TYPO3Fluid\Fluid\ViewHelpers\ElseViewHelper, array|0|, Neos\FluidAdaptor\Core\Rendering\RenderingContext)
+22 TYPO3Fluid\Fluid\Core\Parser\SyntaxTree\ViewHelperNode::evaluate(Neos\FluidAdaptor\Core\Rendering\RenderingContext)
+21 Neos\FluidAdaptor\Core\ViewHelper\AbstractConditionViewHelper::renderElseChild()
+20 Sandstorm\UserManagement\ViewHelpers\IfAuthenticatedViewHelper_Original::render("Sandstorm.UserManagement:Login")
+19 call_user_func_array(array|2|, array|1|)
+18 Neos\FluidAdaptor\Core\ViewHelper\AbstractViewHelper::callRenderMethod()
+17 TYPO3Fluid\Fluid\Core\ViewHelper\AbstractViewHelper::initializeArgumentsAndRender()
+16 TYPO3Fluid\Fluid\Core\ViewHelper\ViewHelperInvoker::invoke(Sandstorm\UserManagement\ViewHelpers\IfAuthenticatedViewHelper, array|0|, Neos\FluidAdaptor\Core\Rendering\RenderingContext)
+15 TYPO3Fluid\Fluid\Core\Parser\SyntaxTree\ViewHelperNode::evaluate(Neos\FluidAdaptor\Core\Rendering\RenderingContext)
+14 TYPO3Fluid\Fluid\Core\Parser\SyntaxTree\AbstractNode::evaluateChildNode(TYPO3Fluid\Fluid\Core\Parser\SyntaxTree\ViewHelperNode, Neos\FluidAdaptor\Core\Rendering\RenderingContext, TRUE)
+13 TYPO3Fluid\Fluid\Core\Parser\SyntaxTree\AbstractNode::evaluateChildNodes(Neos\FluidAdaptor\Core\Rendering\RenderingContext)
+12 TYPO3Fluid\Fluid\Core\Parser\SyntaxTree\RootNode::evaluate(Neos\FluidAdaptor\Core\Rendering\RenderingContext)
+11 TYPO3Fluid\Fluid\Core\Parser\ParsingState::render(Neos\FluidAdaptor\Core\Rendering\RenderingContext)
+10 TYPO3Fluid\Fluid\View\AbstractTemplateView::render()
+9 Neos\Flow\Mvc\Controller\ActionController_Original::callActionMethod()
+8 Neos\Flow\Mvc\Controller\ActionController_Original::processRequest(Neos\Flow\Mvc\ActionRequest, Neos\Flow\Http\Response)
+7 Neos\Flow\Mvc\Dispatcher_Original::initiateDispatchLoop(Neos\Flow\Mvc\ActionRequest, Neos\Flow\Http\Response)
+6 Neos\Flow\Mvc\Dispatcher_Original::dispatch(Neos\Flow\Mvc\ActionRequest, Neos\Flow\Http\Response)
+5 Neos\Flow\Mvc\DispatchComponent_Original::handle(Neos\Flow\Http\Component\ComponentContext)
+4 Neos\Flow\Http\Component\ComponentChain_Original::handle(Neos\Flow\Http\Component\ComponentContext)
+3 Neos\Flow\Http\Component\ComponentChain_Original::handle(Neos\Flow\Http\Component\ComponentContext)
+2 Neos\Flow\Http\RequestHandler::handleRequest()
+1 Neos\Flow\Core\Bootstrap::run()
+
+HTTP REQUEST:
+GET / HTTP/1.1
+Accept-Language: de-DE,de;q=0.8,en-US;q=0.6,en;q=0.4
+Accept-Encoding: gzip, deflate, sdch, br
+Referer: https://localhost/index.php/
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8
+User-Agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36
+Upgrade-Insecure-Requests: 1
+Pragma: no-cache
+Connection: keep-alive
+Host: localhost
+Content-Length: 
+Content-Type: 
+Cache-Control: no-cache
+
+
+
+HTTP RESPONSE:
+[response was empty]
+
+PHP PROCESS:
+Inode: 683221
+PID: 7
+UID: 1000
+GID: 1000
+User: 

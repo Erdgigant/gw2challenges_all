@@ -1,0 +1,61 @@
+Exception #1355480641 in line 578 of /var/www/php/Packages/Framework/Neos.Flow/Classes/Core/Booting/Scripts.php: Failure while evaluating property annotations for class "schilter\gw2challenges\Domain\Model\User": Duplicate definition of column 'persistence_object_identifier' on entity 'schilter\gw2challenges\Domain\Model\User' in a field or discriminator column mapping.
+
+  Type: Doctrine\ORM\Mapping\MappingException
+  Code: 1382003497
+  File: Data/Temporary/Development/Cache/Code/Flow_Object_Classes/Neos_Flow_Persist
+        ence_Doctrine_Mapping_Driver_FlowAnnotationDriver.php
+  Line: 413
+
+Nested exception:
+Duplicate definition of column 'persistence_object_identifier' on entity 'schilter\gw2challenges\Domain\Model\User' in a field or discriminator column mapping.
+
+  Type: Doctrine\ORM\Mapping\MappingException
+  File: Packages/Libraries/doctrine/orm/lib/Doctrine/ORM/Mapping/MappingException.p
+        hp
+  Line: 565
+
+18 Neos\Flow\Core\Booting\Scripts::executeCommand("neos.flow:doctrine:compileproxies", array|16|)
+17 Neos\Flow\Core\Booting\Scripts::compileDoctrineProxies(Neos\Flow\Core\Bootstrap)
+16 Neos\Flow\Core\Booting\Scripts::initializeProxyClasses(Neos\Flow\Core\Bootstrap)
+15 Neos\Flow\Core\Booting\Scripts::recompileClasses(Neos\Flow\Core\Bootstrap)
+14 call_user_func(array|2|, Neos\Flow\Core\Bootstrap)
+13 Neos\Flow\Core\Booting\Step::__invoke(Neos\Flow\Core\Bootstrap)
+12 Neos\Flow\Core\Booting\Sequence::invokeStep(Neos\Flow\Core\Booting\Step, Neos\Flow\Core\Bootstrap)
+11 Neos\Flow\Core\Booting\Sequence::invokeStep(Neos\Flow\Core\Booting\Step, Neos\Flow\Core\Bootstrap)
+10 Neos\Flow\Core\Booting\Sequence::invokeStep(Neos\Flow\Core\Booting\Step, Neos\Flow\Core\Bootstrap)
+9 Neos\Flow\Core\Booting\Sequence::invokeStep(Neos\Flow\Core\Booting\Step, Neos\Flow\Core\Bootstrap)
+8 Neos\Flow\Core\Booting\Sequence::invokeStep(Neos\Flow\Core\Booting\Step, Neos\Flow\Core\Bootstrap)
+7 Neos\Flow\Core\Booting\Sequence::invokeStep(Neos\Flow\Core\Booting\Step, Neos\Flow\Core\Bootstrap)
+6 Neos\Flow\Core\Booting\Sequence::invokeStep(Neos\Flow\Core\Booting\Step, Neos\Flow\Core\Bootstrap)
+5 Neos\Flow\Core\Booting\Sequence::invokeStep(Neos\Flow\Core\Booting\Step, Neos\Flow\Core\Bootstrap)
+4 Neos\Flow\Core\Booting\Sequence::invoke(Neos\Flow\Core\Bootstrap)
+3 Neos\Flow\Http\RequestHandler::boot()
+2 Neos\Flow\Http\RequestHandler::handleRequest()
+1 Neos\Flow\Core\Bootstrap::run()
+
+HTTP REQUEST:
+GET / HTTP/1.1
+Accept-Language: de-DE,de;q=0.8,en-US;q=0.6,en;q=0.4
+Accept-Encoding: gzip, deflate, sdch, br
+Referer: https://localhost/index.php/
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8
+User-Agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36
+Upgrade-Insecure-Requests: 1
+Pragma: no-cache
+Connection: keep-alive
+Host: localhost
+Content-Length: 
+Content-Type: 
+Cache-Control: no-cache
+
+
+
+HTTP RESPONSE:
+[response was empty]
+
+PHP PROCESS:
+Inode: 683221
+PID: 7
+UID: 1000
+GID: 1000
+User: 

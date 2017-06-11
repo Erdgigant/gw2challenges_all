@@ -1,0 +1,67 @@
+Exception #1297759968: Exception while property mapping for target type "schilter\gw2challenges\Domain\Model\User", at property path "": Property "apiKey" was not found in target object of type "schilter\gw2challenges\Domain\Model\User".
+
+17 Neos\Flow\Property\PropertyMapper_Original::convert(array|4|, "schilter\gw2challenges\Domain\Model\User")
+16 call_user_func_array(array|2|, array|2|)
+15 Neos\Flow\ObjectManagement\DependencyInjection\DependencyProxy::__call("convert", array|2|)
+14 schilter\gw2challenges\Domain\Repository\UserRepository_Original::findByAccount(Neos\Flow\Persistence\Doctrine\Proxies\__CG__\Neos\Flow\Security\Account)
+13 call_user_func_array(array|2|, array|1|)
+12 Neos\Flow\ObjectManagement\DependencyInjection\DependencyProxy::__call("findByAccount", array|1|)
+11 schilter\gw2challenges\Controller\MiniController_Original::reLoadAction()
+10 call_user_func_array(array|2|, array|0|)
+9 Neos\Flow\Mvc\Controller\ActionController_Original::callActionMethod()
+8 Neos\Flow\Mvc\Controller\ActionController_Original::processRequest(Neos\Flow\Mvc\ActionRequest, Neos\Flow\Http\Response)
+7 Neos\Flow\Mvc\Dispatcher_Original::initiateDispatchLoop(Neos\Flow\Mvc\ActionRequest, Neos\Flow\Http\Response)
+6 Neos\Flow\Mvc\Dispatcher_Original::dispatch(Neos\Flow\Mvc\ActionRequest, Neos\Flow\Http\Response)
+5 Neos\Flow\Mvc\DispatchComponent_Original::handle(Neos\Flow\Http\Component\ComponentContext)
+4 Neos\Flow\Http\Component\ComponentChain_Original::handle(Neos\Flow\Http\Component\ComponentContext)
+3 Neos\Flow\Http\Component\ComponentChain_Original::handle(Neos\Flow\Http\Component\ComponentContext)
+2 Neos\Flow\Http\RequestHandler::handleRequest()
+1 Neos\Flow\Core\Bootstrap::run()
+
+Previous exception: Exception #1297978366 in line 189 of /var/www/php/Data/Temporary/Development/Cache/Code/Flow_Object_Classes/Neos_Flow_Property_PropertyMapper.php: Property "apiKey" was not found in target object of type "schilter\gw2challenges\Domain\Model\User".
+
+19 Neos\Flow\Property\TypeConverter\PersistentObjectConverter_Original::getTypeOfChildProperty("schilter\gw2challenges\Domain\Model\User", "apiKey", Neos\Flow\Property\PropertyMappingConfiguration)
+18 Neos\Flow\Property\PropertyMapper_Original::doMapping(array|4|, "schilter\gw2challenges\Domain\Model\User", Neos\Flow\Property\PropertyMappingConfiguration, array|0|)
+17 Neos\Flow\Property\PropertyMapper_Original::convert(array|4|, "schilter\gw2challenges\Domain\Model\User")
+16 call_user_func_array(array|2|, array|2|)
+15 Neos\Flow\ObjectManagement\DependencyInjection\DependencyProxy::__call("convert", array|2|)
+14 schilter\gw2challenges\Domain\Repository\UserRepository_Original::findByAccount(Neos\Flow\Persistence\Doctrine\Proxies\__CG__\Neos\Flow\Security\Account)
+13 call_user_func_array(array|2|, array|1|)
+12 Neos\Flow\ObjectManagement\DependencyInjection\DependencyProxy::__call("findByAccount", array|1|)
+11 schilter\gw2challenges\Controller\MiniController_Original::reLoadAction()
+10 call_user_func_array(array|2|, array|0|)
+9 Neos\Flow\Mvc\Controller\ActionController_Original::callActionMethod()
+8 Neos\Flow\Mvc\Controller\ActionController_Original::processRequest(Neos\Flow\Mvc\ActionRequest, Neos\Flow\Http\Response)
+7 Neos\Flow\Mvc\Dispatcher_Original::initiateDispatchLoop(Neos\Flow\Mvc\ActionRequest, Neos\Flow\Http\Response)
+6 Neos\Flow\Mvc\Dispatcher_Original::dispatch(Neos\Flow\Mvc\ActionRequest, Neos\Flow\Http\Response)
+5 Neos\Flow\Mvc\DispatchComponent_Original::handle(Neos\Flow\Http\Component\ComponentContext)
+4 Neos\Flow\Http\Component\ComponentChain_Original::handle(Neos\Flow\Http\Component\ComponentContext)
+3 Neos\Flow\Http\Component\ComponentChain_Original::handle(Neos\Flow\Http\Component\ComponentContext)
+2 Neos\Flow\Http\RequestHandler::handleRequest()
+1 Neos\Flow\Core\Bootstrap::run()
+
+HTTP REQUEST:
+GET /mini/reload HTTP/1.1
+Accept-Language: de-DE,de;q=0.8,en-US;q=0.6,en;q=0.4
+Accept-Encoding: gzip, deflate, sdch, br
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8
+User-Agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36
+Upgrade-Insecure-Requests: 1
+Pragma: no-cache
+Connection: keep-alive
+Host: localhost
+Content-Length: 
+Content-Type: 
+Cache-Control: no-cache
+
+
+
+HTTP RESPONSE:
+[response was empty]
+
+PHP PROCESS:
+Inode: 683221
+PID: 8
+UID: 1000
+GID: 1000
+User: 

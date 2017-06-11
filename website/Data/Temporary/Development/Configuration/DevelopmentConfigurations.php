@@ -2494,6 +2494,28 @@
     ),
     2 => 
     array (
+      'name' => 'gw2challenges :: UserController',
+      'uriPattern' => 'User/{@action}',
+      'defaults' => 
+      array (
+        '@package' => 'schilter.gw2challenges',
+        '@controller' => 'User',
+        '@format' => 'html',
+      ),
+    ),
+    3 => 
+    array (
+      'name' => 'gw2challenges :: ChallengeController',
+      'uriPattern' => 'Challenge/{@action}',
+      'defaults' => 
+      array (
+        '@package' => 'schilter.gw2challenges',
+        '@controller' => 'Challenge',
+        '@format' => 'html',
+      ),
+    ),
+    4 => 
+    array (
       'name' => 'Neos.Welcome :: Welcome screen',
       'uriPattern' => 'flow/welcome',
       'defaults' => 
@@ -2504,7 +2526,7 @@
         '@format' => 'html',
       ),
     ),
-    3 => 
+    5 => 
     array (
       'name' => 'Neos.Welcome :: Redirect to welcome screen',
       'uriPattern' => '',
@@ -2516,7 +2538,7 @@
         '@format' => 'html',
       ),
     ),
-    4 => 
+    6 => 
     array (
       'name' => 'Sandstorm.UserManagement :: Login Screen',
       'uriPattern' => 'login',
@@ -2528,7 +2550,7 @@
         '@format' => 'html',
       ),
     ),
-    5 => 
+    7 => 
     array (
       'name' => 'Sandstorm.UserManagement :: Login: Authenticate',
       'uriPattern' => 'login/authenticate',
@@ -2540,7 +2562,7 @@
         '@format' => 'html',
       ),
     ),
-    6 => 
+    8 => 
     array (
       'name' => 'Sandstorm.UserManagement :: Logout',
       'uriPattern' => 'logout',
@@ -2552,7 +2574,7 @@
         '@format' => 'html',
       ),
     ),
-    7 => 
+    9 => 
     array (
       'name' => 'Sandstorm.UserManagement :: Account: Registration: show form',
       'uriPattern' => 'account/signup/index',
@@ -2564,7 +2586,7 @@
         '@format' => 'html',
       ),
     ),
-    8 => 
+    10 => 
     array (
       'name' => 'Sandstorm.UserManagement :: Account: submit signup form',
       'uriPattern' => 'account/signup/submit',
@@ -2576,7 +2598,7 @@
         '@format' => 'html',
       ),
     ),
-    9 => 
+    11 => 
     array (
       'name' => 'Sandstorm.UserManagement :: Account: activate',
       'uriPattern' => 'account/activate/{token}',
@@ -2588,7 +2610,7 @@
         '@format' => 'html',
       ),
     ),
-    10 => 
+    12 => 
     array (
       'name' => 'Sandstorm.UserManagement :: User: send new password link',
       'uriPattern' => 'account/forgotpassword',
@@ -2600,7 +2622,7 @@
         '@format' => 'html',
       ),
     ),
-    11 => 
+    13 => 
     array (
       'name' => 'Sandstorm.UserManagement :: User: request new password token',
       'uriPattern' => 'account/requestpasswordtoken',
@@ -2612,7 +2634,7 @@
         '@format' => 'html',
       ),
     ),
-    12 => 
+    14 => 
     array (
       'name' => 'Sandstorm.UserManagement :: User: reset password',
       'uriPattern' => 'account/resetpassword/{token}',
@@ -2624,7 +2646,7 @@
         '@format' => 'html',
       ),
     ),
-    13 => 
+    15 => 
     array (
       'name' => 'Sandstorm.UserManagement :: User: reset password',
       'uriPattern' => 'account/updatepassword',

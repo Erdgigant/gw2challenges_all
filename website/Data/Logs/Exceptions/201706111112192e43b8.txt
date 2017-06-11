@@ -1,0 +1,91 @@
+Exception in line 127 of /var/www/php/Packages/Libraries/typo3fluid/fluid/src/Core/Parser/TemplateParser.php: Fluid parse error in template layout_Default_ec7b48ce4616adc768a88828350e8621b717e3f7, line 1 at character 1. Error: Unkown Namespace: &lt;um:ifAuthenticated&gt; (error code 0). Template source chunk: 
+
+
+13 TYPO3Fluid\Fluid\Core\Parser\TemplateParser::createParsingRelatedExceptionWithContext(TYPO3Fluid\Fluid\Core\Parser\UnknownNamespaceException, "layout_Default_ec7b48ce4616adc768a88828350e8621b717e3f7")
+12 TYPO3Fluid\Fluid\Core\Parser\TemplateParser::parse("<!DOCTYPE html>
+<html>
+    <head>
+    	<f:base /> …"text/javascript"></script>
+    </footer>
+</html>
+", "layout_Default_ec7b48ce4616adc768a88828350e8621b717e3f7")
+11 TYPO3Fluid\Fluid\Core\Parser\TemplateParser::getOrParseAndStoreTemplate("layout_Default_ec7b48ce4616adc768a88828350e8621b717e3f7", Closure)
+10 TYPO3Fluid\Fluid\View\AbstractTemplateView::render()
+9 Neos\Flow\Mvc\Controller\ActionController_Original::callActionMethod()
+8 Neos\Flow\Mvc\Controller\ActionController_Original::processRequest(Neos\Flow\Mvc\ActionRequest, Neos\Flow\Http\Response)
+7 Neos\Flow\Mvc\Dispatcher_Original::initiateDispatchLoop(Neos\Flow\Mvc\ActionRequest, Neos\Flow\Http\Response)
+6 Neos\Flow\Mvc\Dispatcher_Original::dispatch(Neos\Flow\Mvc\ActionRequest, Neos\Flow\Http\Response)
+5 Neos\Flow\Mvc\DispatchComponent_Original::handle(Neos\Flow\Http\Component\ComponentContext)
+4 Neos\Flow\Http\Component\ComponentChain_Original::handle(Neos\Flow\Http\Component\ComponentContext)
+3 Neos\Flow\Http\Component\ComponentChain_Original::handle(Neos\Flow\Http\Component\ComponentContext)
+2 Neos\Flow\Http\RequestHandler::handleRequest()
+1 Neos\Flow\Core\Bootstrap::run()
+
+Previous exception: Exception in line 62 of /var/www/php/Data/Temporary/Development/Cache/Code/Flow_Object_Classes/Neos_FluidAdaptor_Core_Parser_TemplateProcessor_NamespaceDetectionTemplateProcessor.php: Unkown Namespace: &lt;um:ifAuthenticated&gt;
+
+15 Neos\FluidAdaptor\Core\Parser\TemplateProcessor\NamespaceDetectionTemplateProcessor_Original::throwExceptionsForUnhandledNamespaces("<!DOCTYPE html>
+<html>
+    <head>
+    	<f:base /> …"text/javascript"></script>
+    </footer>
+</html>
+")
+14 Neos\FluidAdaptor\Core\Parser\TemplateProcessor\NamespaceDetectionTemplateProcessor_Original::preProcessSource("<!DOCTYPE html>
+<html>
+    <head>
+    	<f:base /> …"text/javascript"></script>
+    </footer>
+</html>
+")
+13 TYPO3Fluid\Fluid\Core\Parser\TemplateParser::preProcessTemplateSource("<!DOCTYPE html>
+<html>
+    <head>
+    	<f:base /> …"text/javascript"></script>
+    </footer>
+</html>
+")
+12 TYPO3Fluid\Fluid\Core\Parser\TemplateParser::parse("<!DOCTYPE html>
+<html>
+    <head>
+    	<f:base /> …"text/javascript"></script>
+    </footer>
+</html>
+", "layout_Default_ec7b48ce4616adc768a88828350e8621b717e3f7")
+11 TYPO3Fluid\Fluid\Core\Parser\TemplateParser::getOrParseAndStoreTemplate("layout_Default_ec7b48ce4616adc768a88828350e8621b717e3f7", Closure)
+10 TYPO3Fluid\Fluid\View\AbstractTemplateView::render()
+9 Neos\Flow\Mvc\Controller\ActionController_Original::callActionMethod()
+8 Neos\Flow\Mvc\Controller\ActionController_Original::processRequest(Neos\Flow\Mvc\ActionRequest, Neos\Flow\Http\Response)
+7 Neos\Flow\Mvc\Dispatcher_Original::initiateDispatchLoop(Neos\Flow\Mvc\ActionRequest, Neos\Flow\Http\Response)
+6 Neos\Flow\Mvc\Dispatcher_Original::dispatch(Neos\Flow\Mvc\ActionRequest, Neos\Flow\Http\Response)
+5 Neos\Flow\Mvc\DispatchComponent_Original::handle(Neos\Flow\Http\Component\ComponentContext)
+4 Neos\Flow\Http\Component\ComponentChain_Original::handle(Neos\Flow\Http\Component\ComponentContext)
+3 Neos\Flow\Http\Component\ComponentChain_Original::handle(Neos\Flow\Http\Component\ComponentContext)
+2 Neos\Flow\Http\RequestHandler::handleRequest()
+1 Neos\Flow\Core\Bootstrap::run()
+
+HTTP REQUEST:
+GET / HTTP/1.1
+Accept-Language: de-DE,de;q=0.8,en-US;q=0.6,en;q=0.4
+Accept-Encoding: gzip, deflate, sdch, br
+Referer: https://localhost/index.php/
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8
+User-Agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36
+Upgrade-Insecure-Requests: 1
+Pragma: no-cache
+Connection: keep-alive
+Host: localhost
+Content-Length: 
+Content-Type: 
+Cache-Control: no-cache
+
+
+
+HTTP RESPONSE:
+[response was empty]
+
+PHP PROCESS:
+Inode: 683221
+PID: 8
+UID: 1000
+GID: 1000
+User: 

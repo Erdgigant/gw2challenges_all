@@ -8,7 +8,12 @@ use Sandstorm\UserManagement\Domain\Service\UserCreationServiceInterface;
 /**
  * @Flow\Entity
  */
-class User_Original {
+class User_Original {	
+	
+	/**	 
+	 * @var int
+	 */
+	protected $id;
 	
 	/**
 	 * @var \Neos\Flow\Security\Account
@@ -35,6 +40,14 @@ class User_Original {
 	 * @var \schilter\gw2challenges\Domain\Model\Challenge
 	 */
 	protected $challenges;
+	
+	public function getId(){
+		return $this->id;
+	}
+	
+	public function setId($id){
+		$this->id = $id;
+	}
 	
 	public function getAccount(){
 		return $this->account;
@@ -238,6 +251,7 @@ class User extends User_Original implements \Neos\Flow\ObjectManagement\Proxy\Pr
         $transientProperties = array (
 );
         $propertyVarTags = array (
+  'id' => 'integer',
   'account' => '\\Neos\\Flow\\Security\\Account',
   'apikey' => 'string',
   'minis' => '\\schilter\\gw2challenges\\Domain\\Model\\Mini',
