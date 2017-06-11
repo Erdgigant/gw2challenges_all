@@ -17,6 +17,12 @@ class ChallengeRepository_Original {
 	 */
 	protected $pdoService;
 	
+	/**
+	 * @Flow\Inject
+	 * @var \Neos\Flow\Property\PropertyMapper
+	 */
+	protected $propertyMapper;
+	
 	public function getById($id){
 		$stmt = $this->pdoService->getPdo()->prepare("SELECT * FROM schilter_gw2challenges_domain_model_challenge WHERE id =".$id);
 		$stmt->execute();
@@ -24,6 +30,30 @@ class ChallengeRepository_Original {
 				$stmt->fetch(),
 				\schilter\gw2challenges\Domain\Model\Challenge::class,
 				$this->getConfiguration());
+	}
+	
+	public function newChallenge($name, $ids){
+		$this->pdoService->getPdo()->beginTransaction();
+		$challenge = $this->propertyMapper->convert(
+				array(
+						'name' => $name,
+						'minis' => $ids
+				),\schilter\gw2challenges\Domain\Model\Challenge::class, $this->getConfiguration());
+		$identifier =  \Neos\Utility\ObjectAccess::getProperty($challenge, 'Persistence_Object_Identifier', true);
+		$sql = 'INSERT INTO schilter_gw2challenges_domain_model_challenge (persistence_object_identifier, name, minis) 
+				VALUES (\''.$identifier.'\', \''.$challenge->getName().'\', \''.$challenge->getMinis().'\')';
+		$stmt = $this->pdoService->getPdo()->prepare($sql);
+		$stmt->execute();
+		
+		$this->pdoService->getPdo()->commit();
+		return $identifier;
+	}
+	
+	public function getIdByIdentifier($identifier){
+		$sql = 'SELECT id FROM schilter_gw2challenges_domain_model_challenge WHERE persistence_object_identifier =\''.$identifier.'\'';
+		$stmt = $this->pdoService->getPdo()->prepare($sql);
+		$stmt->execute();
+		return $stmt->fetch()['id'];
 	}
 	
 	public function getConfiguration()
@@ -81,6 +111,7 @@ class ChallengeRepository extends ChallengeRepository_Original implements \Neos\
 );
         $propertyVarTags = array (
   'pdoService' => '\\schilter\\gw2challenges\\Service\\PDOService',
+  'propertyMapper' => '\\Neos\\Flow\\Property\\PropertyMapper',
 );
         $result = $this->Flow_serializeRelatedEntities($transientProperties, $propertyVarTags);
         return $result;
@@ -103,8 +134,10 @@ class ChallengeRepository extends ChallengeRepository_Original implements \Neos\
     private function Flow_Proxy_injectProperties()
     {
         $this->pdoService = new \schilter\gw2challenges\Service\PDOService();
+        $this->Flow_Proxy_LazyPropertyInjection('Neos\Flow\Property\PropertyMapper', 'Neos\Flow\Property\PropertyMapper', 'propertyMapper', '2ab4a1ce2ee31715713d0f207f0ac637', function() { return \Neos\Flow\Core\Bootstrap::$staticObjectManager->get('Neos\Flow\Property\PropertyMapper'); });
         $this->Flow_Injected_Properties = array (
   0 => 'pdoService',
+  1 => 'propertyMapper',
 );
     }
 }
