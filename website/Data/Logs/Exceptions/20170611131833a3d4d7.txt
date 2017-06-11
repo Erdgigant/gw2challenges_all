@@ -1,0 +1,47 @@
+Exception in line 840 of /var/www/php/Packages/Libraries/doctrine/orm/lib/Doctrine/ORM/UnitOfWork.php: Expected value of type "schilter\gw2challenges\Domain\Model\Mini" for association field "schilter\gw2challenges\Domain\Model\User#$minis", got "array" instead.
+
+20 Doctrine\ORM\ORMInvalidArgumentException::invalidAssociation(Neos\Flow\Persistence\Doctrine\Mapping\ClassMetadata, array|20|, array|54|)
+19 Doctrine\ORM\UnitOfWork::computeAssociationChanges(array|20|, array|54|)
+18 Doctrine\ORM\UnitOfWork::computeChangeSet(Neos\Flow\Persistence\Doctrine\Mapping\ClassMetadata, schilter\gw2challenges\Domain\Model\User)
+17 Doctrine\ORM\UnitOfWork::computeScheduleInsertsChangeSets()
+16 Doctrine\ORM\UnitOfWork::computeChangeSets()
+15 Neos\Flow\Persistence\Doctrine\PersistenceManager_Original::persistAll(TRUE)
+14 Neos\Flow\Package::Neos\Flow\{closure}(Neos\Flow\Mvc\ActionRequest, Neos\Flow\Http\Response, schilter\gw2challenges\Controller\MiniController, "Neos\Flow\Mvc\Dispatcher::afterControllerInvocation")
+13 Closure::__invoke(Neos\Flow\Mvc\ActionRequest, Neos\Flow\Http\Response, schilter\gw2challenges\Controller\MiniController, "Neos\Flow\Mvc\Dispatcher::afterControllerInvocation")
+12 call_user_func_array(array|2|, array|4|)
+11 Neos\Flow\SignalSlot\Dispatcher::dispatch("Neos\Flow\Mvc\Dispatcher", "afterControllerInvocation", array|4|)
+10 Neos\Flow\SignalSlot\SignalAspect_Original::forwardSignalToDispatcher(Neos\Flow\Aop\JoinPoint)
+9 Neos\Flow\Aop\Advice\AbstractAdvice::invoke(Neos\Flow\Aop\JoinPoint)
+8 Neos\Flow\Mvc\Dispatcher::emitAfterControllerInvocation(Neos\Flow\Mvc\ActionRequest, Neos\Flow\Http\Response, schilter\gw2challenges\Controller\MiniController)
+7 Neos\Flow\Mvc\Dispatcher_Original::initiateDispatchLoop(Neos\Flow\Mvc\ActionRequest, Neos\Flow\Http\Response)
+6 Neos\Flow\Mvc\Dispatcher_Original::dispatch(Neos\Flow\Mvc\ActionRequest, Neos\Flow\Http\Response)
+5 Neos\Flow\Mvc\DispatchComponent_Original::handle(Neos\Flow\Http\Component\ComponentContext)
+4 Neos\Flow\Http\Component\ComponentChain_Original::handle(Neos\Flow\Http\Component\ComponentContext)
+3 Neos\Flow\Http\Component\ComponentChain_Original::handle(Neos\Flow\Http\Component\ComponentContext)
+2 Neos\Flow\Http\RequestHandler::handleRequest()
+1 Neos\Flow\Core\Bootstrap::run()
+
+HTTP REQUEST:
+GET /mini/reload HTTP/1.1
+Accept-Language: de-DE,de;q=0.8,en-US;q=0.6,en;q=0.4
+Accept-Encoding: gzip, deflate, sdch, br
+Referer: https://localhost/index.php/
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8
+User-Agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36
+Upgrade-Insecure-Requests: 1
+Connection: keep-alive
+Host: localhost
+Content-Length: 
+Content-Type: 
+
+
+
+HTTP RESPONSE:
+<html><head><meta http-equiv="refresh" content="0;url=https://localhost/index.php/"/></head></html>
+
+PHP PROCESS:
+Inode: 683221
+PID: 8
+UID: 1000
+GID: 1000
+User: 

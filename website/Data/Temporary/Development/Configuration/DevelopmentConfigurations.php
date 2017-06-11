@@ -2495,7 +2495,7 @@
     2 => 
     array (
       'name' => 'gw2challenges :: UserController',
-      'uriPattern' => 'User/{@action}',
+      'uriPattern' => 'user/{@action}',
       'defaults' => 
       array (
         '@package' => 'schilter.gw2challenges',
@@ -2506,7 +2506,7 @@
     3 => 
     array (
       'name' => 'gw2challenges :: ChallengeController',
-      'uriPattern' => 'Challenge/{@action}',
+      'uriPattern' => 'challenge/{@action}',
       'defaults' => 
       array (
         '@package' => 'schilter.gw2challenges',

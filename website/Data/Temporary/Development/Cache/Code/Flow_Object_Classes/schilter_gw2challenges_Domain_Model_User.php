@@ -27,17 +27,13 @@ class User_Original {
 	 */
 	protected $apikey;
 	
-	/**
-	 * 
-	 * @ORM\ManyToOne(targetEntity="\schilter\gw2challenges\Domain\Model\Mini")
-	 * @var \schilter\gw2challenges\Domain\Model\Mini
+	/**	 
+	 * @var string
 	 */
 	protected $minis;
 	
-	/**
-	 *
-	 * @ORM\ManyToOne(targetEntity="\schilter\gw2challenges\Domain\Model\Challenge")
-	 * @var \schilter\gw2challenges\Domain\Model\Challenge
+	/**	
+	 * @var string
 	 */
 	protected $challenges;
 	
@@ -254,8 +250,8 @@ class User extends User_Original implements \Neos\Flow\ObjectManagement\Proxy\Pr
   'id' => 'integer',
   'account' => '\\Neos\\Flow\\Security\\Account',
   'apikey' => 'string',
-  'minis' => '\\schilter\\gw2challenges\\Domain\\Model\\Mini',
-  'challenges' => '\\schilter\\gw2challenges\\Domain\\Model\\Challenge',
+  'minis' => 'string',
+  'challenges' => 'string',
   'Persistence_Object_Identifier' => 'string',
 );
         $result = $this->Flow_serializeRelatedEntities($transientProperties, $propertyVarTags);

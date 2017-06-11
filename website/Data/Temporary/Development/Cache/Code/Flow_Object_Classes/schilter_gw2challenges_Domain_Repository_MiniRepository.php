@@ -19,9 +19,9 @@ class MiniRepository_Original {
 	
 	/**
 	 * @Flow\Inject
-	 * @var Neos\Flow\Persistence\Generic\DataMapper
+	 * @var \Neos\Flow\Property\PropertyMapper
 	 */
-	protected $dataMapper;
+	protected $propertyMapper;
 	
 	/**
 	 * @var \Doctrine\Common\Persistence\ObjectManager
@@ -33,6 +33,15 @@ class MiniRepository_Original {
 		$stmt = $this->pdoService->getPdo()->prepare("SELECT * FROM schilter_gw2challenges_domain_model_mini");
 		$stmt->execute();
 		return $stmt->fetchAll();
+	}
+	
+	public function getById($id){
+		$stmt = $this->pdoService->getPdo()->prepare("SELECT * FROM schilter_gw2challenges_domain_model_mini WHERE id =".$id);
+		$stmt->execute();
+		return $this->propertyMapper->convert(
+				$stmt->fetch(), 
+				\schilter\gw2challenges\Domain\Model\Mini::class,
+				$this->getConfiguration());	
 	}
 	
 	public function removeAll(){
@@ -57,11 +66,16 @@ class MiniRepository_Original {
 			$this->pdoService->getPdo()->beginTransaction();
 				
 			$constraints = array();
-			foreach($minis as $mini){
-				$constraints[] = sprintf('(%s, \'%s\', \'%s\')', $mini['id'], addslashes($mini['name']), $mini['icon']) ;
+			foreach($minis as $miniArray){
+				$mini = $this->propertyMapper->convert(
+						$miniArray, 
+						\schilter\gw2challenges\Domain\Model\Mini::class,
+						$this->getConfiguration());				
+				$identifier =  \Neos\Utility\ObjectAccess::getProperty($mini, 'Persistence_Object_Identifier', true);
+				$constraints[] = sprintf('(\'%s\', %s, \'%s\', \'%s\')', $identifier, $mini->getId(), addslashes($mini->getName()), $mini->getIcon()) ;
 			}
 			
-			$sql = 'INSERT INTO schilter_gw2challenges_domain_model_mini (id, name, icon) VALUES '.implode(', ', $constraints);		
+			$sql = 'INSERT INTO schilter_gw2challenges_domain_model_mini (persistence_object_identifier, id, name, icon) VALUES '.implode(', ', $constraints);				
 			$stmt = $this->pdoService->getPdo()->prepare($sql);
 			$stmt->execute();
 				
@@ -71,6 +85,21 @@ class MiniRepository_Original {
 			$this->pdoService->getPdo()->rollBack();
 			die($e->getMessage());
 		}
+	}
+	
+	public function getConfiguration()
+	{
+		/** @var PropertyMappingConfiguration $configuration */
+		$configuration = new \Neos\Flow\Property\PropertyMappingConfiguration();
+	
+		$configuration->setTypeConverterOptions(\Neos\Flow\Property\TypeConverter\PersistentObjectConverter::class, [
+				\Neos\Flow\Property\TypeConverter\PersistentObjectConverter::CONFIGURATION_CREATION_ALLOWED => true,
+				\Neos\Flow\Property\TypeConverter\PersistentObjectConverter::CONFIGURATION_MODIFICATION_ALLOWED => true
+		]);	
+		$configuration->skipUnknownProperties();
+		$configuration->allowProperties('id', 'name', 'icon');	
+		
+		return $configuration;
 	}
 }
 #
@@ -113,7 +142,7 @@ class MiniRepository extends MiniRepository_Original implements \Neos\Flow\Objec
 );
         $propertyVarTags = array (
   'pdoService' => '\\schilter\\gw2challenges\\Service\\PDOService',
-  'dataMapper' => 'Neos\\Flow\\Persistence\\Generic\\DataMapper',
+  'propertyMapper' => '\\Neos\\Flow\\Property\\PropertyMapper',
   'entityManager' => '\\Doctrine\\Common\\Persistence\\ObjectManager',
 );
         $result = $this->Flow_serializeRelatedEntities($transientProperties, $propertyVarTags);
@@ -137,11 +166,11 @@ class MiniRepository extends MiniRepository_Original implements \Neos\Flow\Objec
     private function Flow_Proxy_injectProperties()
     {
         $this->pdoService = new \schilter\gw2challenges\Service\PDOService();
-        $this->Flow_Proxy_LazyPropertyInjection('Neos\Flow\Persistence\Generic\DataMapper', 'Neos\Flow\Persistence\Generic\DataMapper', 'dataMapper', 'd81c0b6d7b37069997255f178955007c', function() { return \Neos\Flow\Core\Bootstrap::$staticObjectManager->get('Neos\Flow\Persistence\Generic\DataMapper'); });
+        $this->Flow_Proxy_LazyPropertyInjection('Neos\Flow\Property\PropertyMapper', 'Neos\Flow\Property\PropertyMapper', 'propertyMapper', '2ab4a1ce2ee31715713d0f207f0ac637', function() { return \Neos\Flow\Core\Bootstrap::$staticObjectManager->get('Neos\Flow\Property\PropertyMapper'); });
         $this->Flow_Proxy_LazyPropertyInjection('Doctrine\Common\Persistence\ObjectManager', 'Doctrine\Common\Persistence\ObjectManager', 'entityManager', 'b34c32b6d660d4fb8aaafae6c0286b19', function() { return \Neos\Flow\Core\Bootstrap::$staticObjectManager->get('Doctrine\Common\Persistence\ObjectManager'); });
         $this->Flow_Injected_Properties = array (
   0 => 'pdoService',
-  1 => 'dataMapper',
+  1 => 'propertyMapper',
   2 => 'entityManager',
 );
     }
