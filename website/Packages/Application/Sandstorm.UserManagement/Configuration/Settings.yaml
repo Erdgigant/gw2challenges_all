@@ -1,0 +1,73 @@
+Sandstorm:
+  UserManagement:
+    # Validity timespan for the activation token for newly registered users.
+    activationTokenTimeout: '2 days'
+    # Validity timespan for the token used to reset passwords.
+    resetPasswordTokenTimeout: '4 hours'
+    # The message that appears if a user could not be logged in.
+    authFailedMessage:
+      title: 'Login nicht möglich'
+      body: 'Sie haben ungültige Zugangsdaten eingegeben. Bitte versuchen Sie es noch einmal.'
+    # Email settings
+    email:
+      subjectActivation: 'Please confirm your account'
+      # Subject line for the password reset email
+      subjectResetPassword: 'Password reset'
+    # An array of roles which are assigned to users after they activate their account.
+    rolesForNewUsers: []
+
+    # Redirect settings after logout/login
+    redirect:
+      afterLogin: []
+      afterLogout: []
+    # To activate redirection, make these settings. controllerArguments are optional.
+#      afterLogin:
+#        action: 'action'
+#        controller: 'Controller'
+#        package: 'Your.Package'
+#        controllerArguments:
+#          yourAdditionalArgument: 'test'
+#      afterLogout:
+#        action: 'action'
+#        controller: 'Controller'
+#        package: 'Your.Package'
+#        controllerArguments:
+#          yourAdditionalArgument: 'test1'
+
+  TemplateMailer:
+    templatePackages:
+      99999: 'Sandstorm.UserManagement'
+    senderAddresses:
+      'sandstorm_usermanagement_sender_email':
+        name: 'Sandstorm Usermanagement Package'
+        address: 'test@example.com'
+
+Neos:
+  Flow:
+    mvc:
+      routes:
+        'Sandstorm.UserManagement': TRUE
+
+
+#   The auth provider settings below are needed for the standalone case only.
+    security:
+      authentication:
+        providers:
+          'Sandstorm.UserManagement:Login':
+            provider: 'PersistedUsernamePasswordProvider'
+            entryPoint: 'WebRedirect'
+            entryPointOptions:
+              routeValues:
+                '@package': 'Sandstorm.UserManagement'
+                '@controller': 'Login'
+                '@action': 'login'
+
+  Neos:
+    fusion:
+      autoInclude:
+        'Sandstorm.UserManagement': TRUE
+
+    userInterface:
+      translation:
+        autoInclude:
+          'Sandstorm.UserManagement': ['NodeTypes/*']

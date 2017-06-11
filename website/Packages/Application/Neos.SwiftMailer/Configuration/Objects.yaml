@@ -1,0 +1,15 @@
+Neos\SwiftMailer\TransportInterface:
+  scope: prototype
+  factoryObjectName: Neos\SwiftMailer\TransportFactory
+  arguments:
+    1:
+      setting: Neos.SwiftMailer.transport.type
+    2:
+      setting: Neos.SwiftMailer.transport.options
+    3:
+      setting: Neos.SwiftMailer.transport.arguments
+
+Neos\SwiftMailer\MailerInterface:
+  arguments:
+    1:
+      object: Neos\SwiftMailer\TransportInterface

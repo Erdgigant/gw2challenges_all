@@ -1,0 +1,51 @@
+Exception #1355480641 in line 321 of /var/www/php/Packages/Framework/Neos.Flow/Classes/Core/Booting/Scripts.php: The class "schilter\gw2challenge\Service\CustomUserCreationService" defined in the object configuration for object "Sandstorm\UserManagement\Domain\Service\UserCreationServiceInterface", defined in package: Sandstorm.UserManagement, does not exist.
+
+  Type: Neos\Flow\ObjectManagement\Exception\UnknownClassException
+  Code: 1352371371
+  File: Packages/Framework/Neos.Flow/Classes/ObjectManagement/Configuration/Configu
+        rationBuilder.php
+  Line: 430
+
+Open Data/Logs/Exceptions/201706050915417a1159.txt for a full stack trace.
+
+17 Neos\Flow\Core\Booting\Scripts::executeCommand("neos.flow:core:compile", array|16|)
+16 Neos\Flow\Core\Booting\Scripts::initializeProxyClasses(Neos\Flow\Core\Bootstrap)
+15 Neos\Flow\Core\Booting\Scripts::recompileClasses(Neos\Flow\Core\Bootstrap)
+14 call_user_func(array|2|, Neos\Flow\Core\Bootstrap)
+13 Neos\Flow\Core\Booting\Step::__invoke(Neos\Flow\Core\Bootstrap)
+12 Neos\Flow\Core\Booting\Sequence::invokeStep(Neos\Flow\Core\Booting\Step, Neos\Flow\Core\Bootstrap)
+11 Neos\Flow\Core\Booting\Sequence::invokeStep(Neos\Flow\Core\Booting\Step, Neos\Flow\Core\Bootstrap)
+10 Neos\Flow\Core\Booting\Sequence::invokeStep(Neos\Flow\Core\Booting\Step, Neos\Flow\Core\Bootstrap)
+9 Neos\Flow\Core\Booting\Sequence::invokeStep(Neos\Flow\Core\Booting\Step, Neos\Flow\Core\Bootstrap)
+8 Neos\Flow\Core\Booting\Sequence::invokeStep(Neos\Flow\Core\Booting\Step, Neos\Flow\Core\Bootstrap)
+7 Neos\Flow\Core\Booting\Sequence::invokeStep(Neos\Flow\Core\Booting\Step, Neos\Flow\Core\Bootstrap)
+6 Neos\Flow\Core\Booting\Sequence::invokeStep(Neos\Flow\Core\Booting\Step, Neos\Flow\Core\Bootstrap)
+5 Neos\Flow\Core\Booting\Sequence::invokeStep(Neos\Flow\Core\Booting\Step, Neos\Flow\Core\Bootstrap)
+4 Neos\Flow\Core\Booting\Sequence::invoke(Neos\Flow\Core\Bootstrap)
+3 Neos\Flow\Http\RequestHandler::boot()
+2 Neos\Flow\Http\RequestHandler::handleRequest()
+1 Neos\Flow\Core\Bootstrap::run()
+
+HTTP REQUEST:
+GET / HTTP/1.1
+Accept-Language: de-DE,de;q=0.8,en-US;q=0.6,en;q=0.4
+Accept-Encoding: gzip, deflate, sdch, br
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8
+User-Agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36
+Upgrade-Insecure-Requests: 1
+Connection: keep-alive
+Host: localhost
+Content-Length: 
+Content-Type: 
+
+
+
+HTTP RESPONSE:
+[response was empty]
+
+PHP PROCESS:
+Inode: 683221
+PID: 7
+UID: 1000
+GID: 1000
+User: 

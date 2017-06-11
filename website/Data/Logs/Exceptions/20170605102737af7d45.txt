@@ -1,0 +1,83 @@
+Exception #1416244515 in line 44 of /var/www/php/Data/Temporary/Development/Cache/Code/Flow_Object_Classes/Neos_Flow_ResourceManagement_Target_FileSystemSymlinkTarget.php: Could not publish "/var/www/php/Packages/Application/schilter.gw2challenges/Resources/Public" into resource publishing target "localWebDirectoryStaticResourcesTarget" because the source directory could not be symlinked at target location.
+
+25 Neos\Flow\ResourceManagement\Target\FileSystemSymlinkTarget_Original::publishDirectory("/var/www/php/Packages/Application/schilter.gw2challenges/Resources/Public", "schilter.gw2challenges")
+24 Neos\Flow\ResourceManagement\Target\FileSystemSymlinkTarget_Original::publishCollection(Neos\Flow\ResourceManagement\Collection)
+23 Neos\Flow\ResourceManagement\Collection_Original::publish()
+22 Neos\Flow\Package::Neos\Flow\{closure}("Flow_PublicResourcesFiles", array|1|, "Neos\Flow\Monitor\FileMonitor::filesHaveChanged", "Neos\Flow\Monitor\FileMonitor::filesHaveChanged")
+21 Closure::__invoke("Flow_PublicResourcesFiles", array|1|, "Neos\Flow\Monitor\FileMonitor::filesHaveChanged", "Neos\Flow\Monitor\FileMonitor::filesHaveChanged")
+20 call_user_func_array(array|2|, array|4|)
+19 Neos\Flow\SignalSlot\Dispatcher::dispatch("Neos\Flow\Monitor\FileMonitor", "filesHaveChanged", array|4|)
+18 Neos\Flow\Monitor\FileMonitor_Original::emitFilesHaveChanged("Flow_PublicResourcesFiles", array|1|)
+17 Neos\Flow\Monitor\FileMonitor_Original::detectChanges()
+16 Neos\Flow\Package::Neos\Flow\{closure}(Neos\Flow\Core\Booting\Step, "runtime", "Neos\Flow\Core\Booting\Sequence::afterInvokeStep", "Neos\Flow\Core\Booting\Sequence::afterInvokeStep")
+15 Closure::__invoke(Neos\Flow\Core\Booting\Step, "runtime", "Neos\Flow\Core\Booting\Sequence::afterInvokeStep", "Neos\Flow\Core\Booting\Sequence::afterInvokeStep")
+14 call_user_func_array(array|2|, array|4|)
+13 Neos\Flow\SignalSlot\Dispatcher::dispatch("Neos\Flow\Core\Booting\Sequence", "afterInvokeStep", array|4|)
+12 Neos\Flow\Core\Booting\Sequence::invokeStep(Neos\Flow\Core\Booting\Step, Neos\Flow\Core\Bootstrap)
+11 Neos\Flow\Core\Booting\Sequence::invokeStep(Neos\Flow\Core\Booting\Step, Neos\Flow\Core\Bootstrap)
+10 Neos\Flow\Core\Booting\Sequence::invokeStep(Neos\Flow\Core\Booting\Step, Neos\Flow\Core\Bootstrap)
+9 Neos\Flow\Core\Booting\Sequence::invokeStep(Neos\Flow\Core\Booting\Step, Neos\Flow\Core\Bootstrap)
+8 Neos\Flow\Core\Booting\Sequence::invokeStep(Neos\Flow\Core\Booting\Step, Neos\Flow\Core\Bootstrap)
+7 Neos\Flow\Core\Booting\Sequence::invokeStep(Neos\Flow\Core\Booting\Step, Neos\Flow\Core\Bootstrap)
+6 Neos\Flow\Core\Booting\Sequence::invokeStep(Neos\Flow\Core\Booting\Step, Neos\Flow\Core\Bootstrap)
+5 Neos\Flow\Core\Booting\Sequence::invokeStep(Neos\Flow\Core\Booting\Step, Neos\Flow\Core\Bootstrap)
+4 Neos\Flow\Core\Booting\Sequence::invoke(Neos\Flow\Core\Bootstrap)
+3 Neos\Flow\Http\RequestHandler::boot()
+2 Neos\Flow\Http\RequestHandler::handleRequest()
+1 Neos\Flow\Core\Bootstrap::run()
+
+Previous exception: Exception #1: Warning: rename(/var/www/php/Web/_Resources/Static/Packages/schilter.gw2challenges.593515f9af2e8.tmp,/var/www/php/Web/_Resources/Static/Packages/schilter.gw2challenges): Is a directory in /var/www/php/Data/Temporary/Development/Cache/Code/Flow_Object_Classes/Neos_Flow_ResourceManagement_Target_FileSystemSymlinkTarget.php line 134
+
+27 Neos\Flow\Error\ErrorHandler::handleError(2, "rename(/var/www/php/Web/_Resources/Static/Packages…c/Packages/schilter.gw2challenges): Is a directory", "/var/www/php/Data/Temporary/Development/Cache/Code…ourceManagement_Target_FileSystemSymlinkTarget.php", 134, array|4|)
+26 rename("/var/www/php/Web/_Resources/Static/Packages/schilter.gw2challenges.593515f9af2e8.tmp", "/var/www/php/Web/_Resources/Static/Packages/schilter.gw2challenges")
+25 Neos\Flow\ResourceManagement\Target\FileSystemSymlinkTarget_Original::publishDirectory("/var/www/php/Packages/Application/schilter.gw2challenges/Resources/Public", "schilter.gw2challenges")
+24 Neos\Flow\ResourceManagement\Target\FileSystemSymlinkTarget_Original::publishCollection(Neos\Flow\ResourceManagement\Collection)
+23 Neos\Flow\ResourceManagement\Collection_Original::publish()
+22 Neos\Flow\Package::Neos\Flow\{closure}("Flow_PublicResourcesFiles", array|1|, "Neos\Flow\Monitor\FileMonitor::filesHaveChanged", "Neos\Flow\Monitor\FileMonitor::filesHaveChanged")
+21 Closure::__invoke("Flow_PublicResourcesFiles", array|1|, "Neos\Flow\Monitor\FileMonitor::filesHaveChanged", "Neos\Flow\Monitor\FileMonitor::filesHaveChanged")
+20 call_user_func_array(array|2|, array|4|)
+19 Neos\Flow\SignalSlot\Dispatcher::dispatch("Neos\Flow\Monitor\FileMonitor", "filesHaveChanged", array|4|)
+18 Neos\Flow\Monitor\FileMonitor_Original::emitFilesHaveChanged("Flow_PublicResourcesFiles", array|1|)
+17 Neos\Flow\Monitor\FileMonitor_Original::detectChanges()
+16 Neos\Flow\Package::Neos\Flow\{closure}(Neos\Flow\Core\Booting\Step, "runtime", "Neos\Flow\Core\Booting\Sequence::afterInvokeStep", "Neos\Flow\Core\Booting\Sequence::afterInvokeStep")
+15 Closure::__invoke(Neos\Flow\Core\Booting\Step, "runtime", "Neos\Flow\Core\Booting\Sequence::afterInvokeStep", "Neos\Flow\Core\Booting\Sequence::afterInvokeStep")
+14 call_user_func_array(array|2|, array|4|)
+13 Neos\Flow\SignalSlot\Dispatcher::dispatch("Neos\Flow\Core\Booting\Sequence", "afterInvokeStep", array|4|)
+12 Neos\Flow\Core\Booting\Sequence::invokeStep(Neos\Flow\Core\Booting\Step, Neos\Flow\Core\Bootstrap)
+11 Neos\Flow\Core\Booting\Sequence::invokeStep(Neos\Flow\Core\Booting\Step, Neos\Flow\Core\Bootstrap)
+10 Neos\Flow\Core\Booting\Sequence::invokeStep(Neos\Flow\Core\Booting\Step, Neos\Flow\Core\Bootstrap)
+9 Neos\Flow\Core\Booting\Sequence::invokeStep(Neos\Flow\Core\Booting\Step, Neos\Flow\Core\Bootstrap)
+8 Neos\Flow\Core\Booting\Sequence::invokeStep(Neos\Flow\Core\Booting\Step, Neos\Flow\Core\Bootstrap)
+7 Neos\Flow\Core\Booting\Sequence::invokeStep(Neos\Flow\Core\Booting\Step, Neos\Flow\Core\Bootstrap)
+6 Neos\Flow\Core\Booting\Sequence::invokeStep(Neos\Flow\Core\Booting\Step, Neos\Flow\Core\Bootstrap)
+5 Neos\Flow\Core\Booting\Sequence::invokeStep(Neos\Flow\Core\Booting\Step, Neos\Flow\Core\Bootstrap)
+4 Neos\Flow\Core\Booting\Sequence::invoke(Neos\Flow\Core\Bootstrap)
+3 Neos\Flow\Http\RequestHandler::boot()
+2 Neos\Flow\Http\RequestHandler::handleRequest()
+1 Neos\Flow\Core\Bootstrap::run()
+
+HTTP REQUEST:
+GET / HTTP/1.1
+Accept-Language: de-DE,de;q=0.8,en-US;q=0.6,en;q=0.4
+Accept-Encoding: gzip, deflate, sdch, br
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8
+User-Agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36
+Upgrade-Insecure-Requests: 1
+Pragma: no-cache
+Connection: keep-alive
+Host: localhost
+Content-Length: 
+Content-Type: 
+Cache-Control: no-cache
+
+
+
+HTTP RESPONSE:
+[response was empty]
+
+PHP PROCESS:
+Inode: 683221
+PID: 7
+UID: 1000
+GID: 1000
+User: 

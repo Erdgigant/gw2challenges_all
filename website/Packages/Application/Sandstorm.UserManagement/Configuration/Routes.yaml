@@ -1,0 +1,99 @@
+#                                                                        #
+# Default routes configuration for the User Management package           #
+#                                                                        #
+
+## Login/Logout ----------------------------------------------------------
+
+-
+  name: 'Login Screen'
+  uriPattern: 'login'
+  defaults:
+    '@package':    'Sandstorm.UserManagement'
+    '@controller': 'Login'
+    '@action':     'login'
+    '@format':     'html'
+
+-
+  name: 'Login: Authenticate'
+  uriPattern: 'login/authenticate'
+  defaults:
+    '@package':    'Sandstorm.UserManagement'
+    '@controller': 'Login'
+    '@action':     'authenticate'
+    '@format':     'html'
+
+-
+  name: 'Logout'
+  uriPattern: 'logout'
+  defaults:
+    '@package':    'Sandstorm.UserManagement'
+    '@controller': 'Login'
+    '@action':     'logout'
+    '@format':     'html'
+
+## Registration & account activation ---------------------------------------
+
+-
+  name: 'Account: Registration: show form'
+  uriPattern: 'account/signup/index'
+  defaults:
+    '@package': 'Sandstorm.UserManagement'
+    '@controller': 'Registration'
+    '@action':     'index'
+    '@format':     'html'
+
+-
+  name: 'Account: submit signup form'
+  uriPattern: 'account/signup/submit'
+  defaults:
+    '@package': 'Sandstorm.UserManagement'
+    '@controller': 'Registration'
+    '@action':     'register'
+    '@format':     'html'
+
+-
+  name: 'Account: activate'
+  uriPattern: 'account/activate/{token}'
+  defaults:
+    '@package': 'Sandstorm.UserManagement'
+    '@controller': 'Registration'
+    '@action':     'activateAccount'
+    '@format':     'html'
+
+## Reset password -----------------------------------------------------------
+
+-
+  name: 'User: send new password link'
+  uriPattern: 'account/forgotpassword'
+  defaults:
+    '@package': 'Sandstorm.UserManagement'
+    '@controller': 'ResetPassword'
+    '@action':     'index'
+    '@format':     'html'
+
+-
+  name: 'User: request new password token'
+  uriPattern: 'account/requestpasswordtoken'
+  defaults:
+    '@package': 'Sandstorm.UserManagement'
+    '@controller': 'ResetPassword'
+    '@action':     'requestToken'
+    '@format':     'html'
+
+-
+  name: 'User: reset password'
+  uriPattern: 'account/resetpassword/{token}'
+  defaults:
+    '@package': 'Sandstorm.UserManagement'
+    '@controller': 'ResetPassword'
+    '@action':     'insertNewPassword'
+    '@format':     'html'
+
+-
+  name: 'User: reset password'
+  uriPattern: 'account/updatepassword'
+  defaults:
+    '@package': 'Sandstorm.UserManagement'
+    '@controller': 'ResetPassword'
+    '@action':     'updatePassword'
+    '@format':     'html'

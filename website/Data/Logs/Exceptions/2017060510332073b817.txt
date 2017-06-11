@@ -1,0 +1,23 @@
+Exception #1355480641 in line 578 of /var/www/php/Packages/Framework/Neos.Flow/Classes/Core/Booting/Scripts.php: Notice: Undefined offset: 1 in /var/www/php/Data/Temporary/Development/Cache/Code/Flow_Object_Classes/Neos_Flow_Persistence_Doctrine_Mapping_Driver_FlowAnnotationDriver.php line 509
+
+  Type: Neos\Flow\Error\Exception
+  Code: 1
+  File: Packages/Framework/Neos.Flow/Classes/Error/ErrorHandler.php
+  Line: 81
+
+Open Data/Logs/Exceptions/20170605103322fe8c9d.txt for a full stack trace.
+
+14 Neos\Flow\Core\Booting\Scripts::executeCommand("neos.flow:doctrine:compileproxies", array|16|)
+13 Neos\Flow\Core\Booting\Scripts::compileDoctrineProxies(Neos\Flow\Core\Bootstrap)
+12 Neos\Flow\Core\Booting\Scripts::initializeProxyClasses(Neos\Flow\Core\Bootstrap)
+11 call_user_func(array|2|, Neos\Flow\Core\Bootstrap)
+10 Neos\Flow\Core\Booting\Step::__invoke(Neos\Flow\Core\Bootstrap)
+9 Neos\Flow\Core\Booting\Sequence::invokeStep(Neos\Flow\Core\Booting\Step, Neos\Flow\Core\Bootstrap)
+8 Neos\Flow\Core\Booting\Sequence::invokeStep(Neos\Flow\Core\Booting\Step, Neos\Flow\Core\Bootstrap)
+7 Neos\Flow\Core\Booting\Sequence::invokeStep(Neos\Flow\Core\Booting\Step, Neos\Flow\Core\Bootstrap)
+6 Neos\Flow\Core\Booting\Sequence::invokeStep(Neos\Flow\Core\Booting\Step, Neos\Flow\Core\Bootstrap)
+5 Neos\Flow\Core\Booting\Sequence::invoke(Neos\Flow\Core\Bootstrap)
+4 Neos\Flow\Cli\CommandRequestHandler::boot("Runtime")
+3 Neos\Flow\Cli\CommandRequestHandler::handleRequest()
+2 Neos\Flow\Core\Bootstrap::run()
+1 require("/var/www/php/Packages/Framework/Neos.Flow/Scripts/flow.php")

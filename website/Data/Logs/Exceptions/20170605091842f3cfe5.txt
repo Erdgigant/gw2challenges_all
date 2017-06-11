@@ -1,0 +1,23 @@
+Exception #1355480641 in line 321 of /var/www/php/Packages/Framework/Neos.Flow/Classes/Core/Booting/Scripts.php: The class "schilter\gw2challenge\Service\CustomUserCreationService" defined in the object configuration for object "Sandstorm\UserManagement\Domain\Service\UserCreationServiceInterface", defined in package: Sandstorm.UserManagement, does not exist.
+
+  Type: Neos\Flow\ObjectManagement\Exception\UnknownClassException
+  Code: 1352371371
+  File: Packages/Framework/Neos.Flow/Classes/ObjectManagement/Configuration/Configu
+        rationBuilder.php
+  Line: 430
+
+Open Data/Logs/Exceptions/20170605091842d3c19a.txt for a full stack trace.
+
+13 Neos\Flow\Core\Booting\Scripts::executeCommand("neos.flow:core:compile", array|16|)
+12 Neos\Flow\Core\Booting\Scripts::initializeProxyClasses(Neos\Flow\Core\Bootstrap)
+11 call_user_func(array|2|, Neos\Flow\Core\Bootstrap)
+10 Neos\Flow\Core\Booting\Step::__invoke(Neos\Flow\Core\Bootstrap)
+9 Neos\Flow\Core\Booting\Sequence::invokeStep(Neos\Flow\Core\Booting\Step, Neos\Flow\Core\Bootstrap)
+8 Neos\Flow\Core\Booting\Sequence::invokeStep(Neos\Flow\Core\Booting\Step, Neos\Flow\Core\Bootstrap)
+7 Neos\Flow\Core\Booting\Sequence::invokeStep(Neos\Flow\Core\Booting\Step, Neos\Flow\Core\Bootstrap)
+6 Neos\Flow\Core\Booting\Sequence::invokeStep(Neos\Flow\Core\Booting\Step, Neos\Flow\Core\Bootstrap)
+5 Neos\Flow\Core\Booting\Sequence::invoke(Neos\Flow\Core\Bootstrap)
+4 Neos\Flow\Cli\CommandRequestHandler::boot("Runtime")
+3 Neos\Flow\Cli\CommandRequestHandler::handleRequest()
+2 Neos\Flow\Core\Bootstrap::run()
+1 require("/var/www/php/Packages/Framework/Neos.Flow/Scripts/flow.php")

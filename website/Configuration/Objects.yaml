@@ -1,0 +1,2 @@
+Sandstorm\UserManagement\Domain\Service\UserCreationServiceInterface:
+  className: 'schilter\gw2challenges\Service\CustomUserCreationService'

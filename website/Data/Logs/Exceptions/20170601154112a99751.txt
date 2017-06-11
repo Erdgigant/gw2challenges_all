@@ -1,0 +1,104 @@
+Exception in line 145 of /var/www/php/Packages/Libraries/doctrine/dbal/lib/Doctrine/DBAL/DBALException.php: An exception occured in driver: SQLSTATE[HY000] [1049] Unknown database 'flow'
+
+24 Doctrine\DBAL\Driver\AbstractMySQLDriver::convertException("An exception occured in driver: SQLSTATE[HY000] [1049] Unknown database 'flow'", Doctrine\DBAL\Driver\PDOException)
+23 Doctrine\DBAL\DBALException::driverException(Doctrine\DBAL\Driver\PDOMySql\Driver, Doctrine\DBAL\Driver\PDOException)
+22 Doctrine\DBAL\Driver\PDOMySql\Driver::connect(array|7|, "root", "my-secret-pw", array|0|)
+21 Doctrine\DBAL\Connection::connect()
+20 Doctrine\DBAL\Connection::executeQuery("SELECT s0_.persistence_object_identifier AS persis… FROM schilter_gw2challenges_domain_model_mini s0_", array|0|, array|0|, NULL)
+19 Doctrine\ORM\Query\Exec\SingleSelectExecutor::execute(Doctrine\DBAL\Connection, array|0|, array|0|)
+18 Doctrine\ORM\Query::_doExecute()
+17 Doctrine\ORM\AbstractQuery::executeIgnoreQueryCache(NULL, 1)
+16 Doctrine\ORM\AbstractQuery::execute(NULL, 1)
+15 Doctrine\ORM\AbstractQuery::getResult()
+14 Neos\Flow\Persistence\Doctrine\Query_Original::getResult()
+13 Neos\Flow\Persistence\Doctrine\QueryResult_Original::initialize()
+12 Neos\Flow\Persistence\Doctrine\QueryResult_Original::toArray()
+11 schilter\gw2challenges\Controller\MiniController_Original::indexAction()
+10 call_user_func_array(array|2|, array|0|)
+9 Neos\Flow\Mvc\Controller\ActionController_Original::callActionMethod()
+8 Neos\Flow\Mvc\Controller\ActionController_Original::processRequest(Neos\Flow\Mvc\ActionRequest, Neos\Flow\Http\Response)
+7 Neos\Flow\Mvc\Dispatcher_Original::initiateDispatchLoop(Neos\Flow\Mvc\ActionRequest, Neos\Flow\Http\Response)
+6 Neos\Flow\Mvc\Dispatcher_Original::dispatch(Neos\Flow\Mvc\ActionRequest, Neos\Flow\Http\Response)
+5 Neos\Flow\Mvc\DispatchComponent_Original::handle(Neos\Flow\Http\Component\ComponentContext)
+4 Neos\Flow\Http\Component\ComponentChain_Original::handle(Neos\Flow\Http\Component\ComponentContext)
+3 Neos\Flow\Http\Component\ComponentChain_Original::handle(Neos\Flow\Http\Component\ComponentContext)
+2 Neos\Flow\Http\RequestHandler::handleRequest()
+1 Neos\Flow\Core\Bootstrap::run()
+
+Previous exception: Exception #1049 in line 41 of /var/www/php/Packages/Libraries/doctrine/dbal/lib/Doctrine/DBAL/Driver/PDOMySql/Driver.php: SQLSTATE[HY000] [1049] Unknown database 'flow'
+
+23 Doctrine\DBAL\Driver\PDOConnection::__construct("mysql:host=mariadb;dbname=flow;charset=utf8;", "root", "my-secret-pw", array|0|)
+22 Doctrine\DBAL\Driver\PDOMySql\Driver::connect(array|7|, "root", "my-secret-pw", array|0|)
+21 Doctrine\DBAL\Connection::connect()
+20 Doctrine\DBAL\Connection::executeQuery("SELECT s0_.persistence_object_identifier AS persis… FROM schilter_gw2challenges_domain_model_mini s0_", array|0|, array|0|, NULL)
+19 Doctrine\ORM\Query\Exec\SingleSelectExecutor::execute(Doctrine\DBAL\Connection, array|0|, array|0|)
+18 Doctrine\ORM\Query::_doExecute()
+17 Doctrine\ORM\AbstractQuery::executeIgnoreQueryCache(NULL, 1)
+16 Doctrine\ORM\AbstractQuery::execute(NULL, 1)
+15 Doctrine\ORM\AbstractQuery::getResult()
+14 Neos\Flow\Persistence\Doctrine\Query_Original::getResult()
+13 Neos\Flow\Persistence\Doctrine\QueryResult_Original::initialize()
+12 Neos\Flow\Persistence\Doctrine\QueryResult_Original::toArray()
+11 schilter\gw2challenges\Controller\MiniController_Original::indexAction()
+10 call_user_func_array(array|2|, array|0|)
+9 Neos\Flow\Mvc\Controller\ActionController_Original::callActionMethod()
+8 Neos\Flow\Mvc\Controller\ActionController_Original::processRequest(Neos\Flow\Mvc\ActionRequest, Neos\Flow\Http\Response)
+7 Neos\Flow\Mvc\Dispatcher_Original::initiateDispatchLoop(Neos\Flow\Mvc\ActionRequest, Neos\Flow\Http\Response)
+6 Neos\Flow\Mvc\Dispatcher_Original::dispatch(Neos\Flow\Mvc\ActionRequest, Neos\Flow\Http\Response)
+5 Neos\Flow\Mvc\DispatchComponent_Original::handle(Neos\Flow\Http\Component\ComponentContext)
+4 Neos\Flow\Http\Component\ComponentChain_Original::handle(Neos\Flow\Http\Component\ComponentContext)
+3 Neos\Flow\Http\Component\ComponentChain_Original::handle(Neos\Flow\Http\Component\ComponentContext)
+2 Neos\Flow\Http\RequestHandler::handleRequest()
+1 Neos\Flow\Core\Bootstrap::run()
+
+Previous exception: Exception #1049 in line 43 of /var/www/php/Packages/Libraries/doctrine/dbal/lib/Doctrine/DBAL/Driver/PDOConnection.php: SQLSTATE[HY000] [1049] Unknown database 'flow'
+
+24 PDO::__construct("mysql:host=mariadb;dbname=flow;charset=utf8;", "root", "my-secret-pw", array|0|)
+23 Doctrine\DBAL\Driver\PDOConnection::__construct("mysql:host=mariadb;dbname=flow;charset=utf8;", "root", "my-secret-pw", array|0|)
+22 Doctrine\DBAL\Driver\PDOMySql\Driver::connect(array|7|, "root", "my-secret-pw", array|0|)
+21 Doctrine\DBAL\Connection::connect()
+20 Doctrine\DBAL\Connection::executeQuery("SELECT s0_.persistence_object_identifier AS persis… FROM schilter_gw2challenges_domain_model_mini s0_", array|0|, array|0|, NULL)
+19 Doctrine\ORM\Query\Exec\SingleSelectExecutor::execute(Doctrine\DBAL\Connection, array|0|, array|0|)
+18 Doctrine\ORM\Query::_doExecute()
+17 Doctrine\ORM\AbstractQuery::executeIgnoreQueryCache(NULL, 1)
+16 Doctrine\ORM\AbstractQuery::execute(NULL, 1)
+15 Doctrine\ORM\AbstractQuery::getResult()
+14 Neos\Flow\Persistence\Doctrine\Query_Original::getResult()
+13 Neos\Flow\Persistence\Doctrine\QueryResult_Original::initialize()
+12 Neos\Flow\Persistence\Doctrine\QueryResult_Original::toArray()
+11 schilter\gw2challenges\Controller\MiniController_Original::indexAction()
+10 call_user_func_array(array|2|, array|0|)
+9 Neos\Flow\Mvc\Controller\ActionController_Original::callActionMethod()
+8 Neos\Flow\Mvc\Controller\ActionController_Original::processRequest(Neos\Flow\Mvc\ActionRequest, Neos\Flow\Http\Response)
+7 Neos\Flow\Mvc\Dispatcher_Original::initiateDispatchLoop(Neos\Flow\Mvc\ActionRequest, Neos\Flow\Http\Response)
+6 Neos\Flow\Mvc\Dispatcher_Original::dispatch(Neos\Flow\Mvc\ActionRequest, Neos\Flow\Http\Response)
+5 Neos\Flow\Mvc\DispatchComponent_Original::handle(Neos\Flow\Http\Component\ComponentContext)
+4 Neos\Flow\Http\Component\ComponentChain_Original::handle(Neos\Flow\Http\Component\ComponentContext)
+3 Neos\Flow\Http\Component\ComponentChain_Original::handle(Neos\Flow\Http\Component\ComponentContext)
+2 Neos\Flow\Http\RequestHandler::handleRequest()
+1 Neos\Flow\Core\Bootstrap::run()
+
+HTTP REQUEST:
+GET / HTTP/1.1
+Accept-Language: de-DE,de;q=0.8,en-US;q=0.6,en;q=0.4
+Accept-Encoding: gzip, deflate, sdch, br
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8
+User-Agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36
+Upgrade-Insecure-Requests: 1
+Connection: keep-alive
+Host: localhost
+Content-Length: 
+Content-Type: 
+Cache-Control: max-age=0
+
+
+
+HTTP RESPONSE:
+[response was empty]
+
+PHP PROCESS:
+Inode: 683221
+PID: 8
+UID: 1000
+GID: 1000
+User: 

@@ -1,0 +1,8 @@
+Neos:
+  Flow:
+    persistence:
+      backendOptions:
+        dbname: 'gw2challenge'
+        user: 'root'
+        password: 'my-secret-pw'
+        host: 'mariadb'
