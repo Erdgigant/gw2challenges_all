@@ -17,13 +17,57 @@ class ChallengeController_Original extends ActionController
 	protected $securityContext;
 	
 	/**
-	 * @FLow\Inject
+	 * @Flow\Inject
+	 * @var \schilter\gw2challenges\Domain\Repository\MiniRepository
+	 */
+	protected $miniRepository;
+	
+	/**
+	 * @Flow\Inject
+	 * @var \schilter\gw2challenges\Domain\Repository\UserRepository
+	 */
+	protected $userRepository;
+	
+	/**
+	 * @Flow\Inject
 	 * @var \schilter\gw2challenges\Domain\Repository\ChallengeRepository
 	 */
 	protected $challengeRepository;
+
 	
 	public function listAction(){
-		$this->view->assign('challenges', $this->securityContext->getChallenges());
+		if($this->securityContext->getAccount()){			
+			$user = $this->userRepository->findByAccount($this->securityContext->getAccount());
+			$ids = explode(',', $user->getChallenges());
+			if($ids[0] != ''){		
+				$challenges = array();			
+				foreach($ids as $id){
+					$challenge = $this->challengeRepository->getById($id);
+					$challenges[] = array(
+							'id' => $mini->getId(),
+							'name' => $mini->getName(),
+							'minis' => $mini->getIcon()
+					);
+				}
+				$this->view->assign('challenges', $challenges);
+			}
+			else{
+				$this->addFlashMessage('No Challenges found', 'Error', \Neos\Error\Messages\Message::SEVERITY_ERROR);
+				$this->redirect('index', 'Mini');
+			}
+		}
+		else{
+			$this->addFlashMessage('Please Log in first', 'Error', \Neos\Error\Messages\Message::SEVERITY_ERROR);
+			$this->redirect('index', 'Mini');
+		}
+	}
+	
+	public function newAction(){
+		$this->view->assign('minis', json_encode($this->miniRepository->findAll()));
+	}
+	
+	public function createAction(){
+		
 	}
 }
 #
@@ -64,6 +108,8 @@ class ChallengeController extends ChallengeController_Original implements \Neos\
 );
         $propertyVarTags = array (
   'securityContext' => '\\Neos\\Flow\\Security\\Context',
+  'miniRepository' => '\\schilter\\gw2challenges\\Domain\\Repository\\MiniRepository',
+  'userRepository' => '\\schilter\\gw2challenges\\Domain\\Repository\\UserRepository',
   'challengeRepository' => '\\schilter\\gw2challenges\\Domain\\Repository\\ChallengeRepository',
   'objectManager' => 'Neos\\Flow\\ObjectManagement\\ObjectManagerInterface',
   'reflectionService' => 'Neos\\Flow\\Reflection\\ReflectionService',
@@ -109,6 +155,8 @@ class ChallengeController extends ChallengeController_Original implements \Neos\
     {
         $this->injectSettings(\Neos\Flow\Core\Bootstrap::$staticObjectManager->get(\Neos\Flow\Configuration\ConfigurationManager::class)->getConfiguration('Settings', 'schilter.gw2challenges'));
         $this->Flow_Proxy_LazyPropertyInjection('Neos\Flow\Security\Context', 'Neos\Flow\Security\Context', 'securityContext', 'f7e2ddeaebd191e228b8c2e4dc7f1f83', function() { return \Neos\Flow\Core\Bootstrap::$staticObjectManager->get('Neos\Flow\Security\Context'); });
+        $this->Flow_Proxy_LazyPropertyInjection('schilter\gw2challenges\Domain\Repository\MiniRepository', 'schilter\gw2challenges\Domain\Repository\MiniRepository', 'miniRepository', 'b3e18de92e5fae7ba6088f5d18991785', function() { return \Neos\Flow\Core\Bootstrap::$staticObjectManager->get('schilter\gw2challenges\Domain\Repository\MiniRepository'); });
+        $this->Flow_Proxy_LazyPropertyInjection('schilter\gw2challenges\Domain\Repository\UserRepository', 'schilter\gw2challenges\Domain\Repository\UserRepository', 'userRepository', '48ddfecbb0948caa0c7b056b06d3b0c9', function() { return \Neos\Flow\Core\Bootstrap::$staticObjectManager->get('schilter\gw2challenges\Domain\Repository\UserRepository'); });
         $this->Flow_Proxy_LazyPropertyInjection('schilter\gw2challenges\Domain\Repository\ChallengeRepository', 'schilter\gw2challenges\Domain\Repository\ChallengeRepository', 'challengeRepository', '3a94189af35e2a39929cc86e4bf613c9', function() { return \Neos\Flow\Core\Bootstrap::$staticObjectManager->get('schilter\gw2challenges\Domain\Repository\ChallengeRepository'); });
         $this->Flow_Proxy_LazyPropertyInjection('Neos\Flow\ObjectManagement\ObjectManagerInterface', 'Neos\Flow\ObjectManagement\ObjectManager', 'objectManager', '9524ff5e5332c1890aa361e5d186b7b6', function() { return \Neos\Flow\Core\Bootstrap::$staticObjectManager->get('Neos\Flow\ObjectManagement\ObjectManagerInterface'); });
         $this->Flow_Proxy_LazyPropertyInjection('Neos\Flow\Reflection\ReflectionService', 'Neos\Flow\Reflection\ReflectionService', 'reflectionService', '464c26aa94c66579c050985566cbfc1f', function() { return \Neos\Flow\Core\Bootstrap::$staticObjectManager->get('Neos\Flow\Reflection\ReflectionService'); });
@@ -122,16 +170,18 @@ class ChallengeController extends ChallengeController_Original implements \Neos\
         $this->Flow_Injected_Properties = array (
   0 => 'settings',
   1 => 'securityContext',
-  2 => 'challengeRepository',
-  3 => 'objectManager',
-  4 => 'reflectionService',
-  5 => 'mvcPropertyMappingConfigurationService',
-  6 => 'viewConfigurationManager',
-  7 => 'systemLogger',
-  8 => 'validatorResolver',
-  9 => 'flashMessageContainer',
-  10 => 'persistenceManager',
-  11 => 'defaultViewImplementation',
+  2 => 'miniRepository',
+  3 => 'userRepository',
+  4 => 'challengeRepository',
+  5 => 'objectManager',
+  6 => 'reflectionService',
+  7 => 'mvcPropertyMappingConfigurationService',
+  8 => 'viewConfigurationManager',
+  9 => 'systemLogger',
+  10 => 'validatorResolver',
+  11 => 'flashMessageContainer',
+  12 => 'persistenceManager',
+  13 => 'defaultViewImplementation',
 );
     }
 }

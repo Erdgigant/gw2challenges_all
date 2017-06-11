@@ -21,10 +21,8 @@ class Challenge_Original{
 	 */
 	protected $name;
 	
-	/**
-	 * 
-	 * @ORM\ManyToOne(targetEntity="\schilter\gw2challenges\Domain\Model\Mini")
-	 * @var \schilter\gw2challenges\Domain\Model\Mini
+	/**	
+	 * @var string
 	 */
 	protected $minis;
 	
@@ -224,7 +222,7 @@ class Challenge extends Challenge_Original implements \Neos\Flow\ObjectManagemen
         $propertyVarTags = array (
   'id' => 'integer',
   'name' => 'string',
-  'minis' => '\\schilter\\gw2challenges\\Domain\\Model\\Mini',
+  'minis' => 'string',
   'Persistence_Object_Identifier' => 'string',
 );
         $result = $this->Flow_serializeRelatedEntities($transientProperties, $propertyVarTags);
