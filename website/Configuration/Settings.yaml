@@ -1,0 +1,9 @@
+Neos:
+  SwiftMailer:
+    transport:
+      type: 'Swift_SmtpTransport'
+      options:
+        host: 'smtp.gmail.com'
+        port: 465
+        username: 'gibz.module.151@gmail.com'      
+        password: 'Pe$6A+aprunu'     
