@@ -2139,10 +2139,14 @@
       array (
         'transport' => 
         array (
-          'type' => 'Swift_MailTransport',
+          'type' => 'Swift_SmtpTransport',
           'arguments' => NULL,
           'options' => 
           array (
+            'host' => 'smtp.gmail.com',
+            'port' => 465,
+            'username' => 'gibz.module.151@gmail.com',
+            'password' => 'Pe$6A+aprunu',
           ),
         ),
       ),

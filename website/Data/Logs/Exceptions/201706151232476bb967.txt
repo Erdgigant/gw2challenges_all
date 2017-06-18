@@ -1,0 +1,39 @@
+Exception #1 in line 43 of /var/www/php/Data/Temporary/Development/Cache/Code/Flow_Object_Classes/schilter_gw2challenges_Controller_ChallengeController.php: Notice: Undefined offset: 0 in /var/www/php/Data/Temporary/Development/Cache/Code/Flow_Object_Classes/schilter_gw2challenges_Controller_ChallengeController.php line 43
+
+12 Neos\Flow\Error\ErrorHandler::handleError(8, "Undefined offset: 0", "/var/www/php/Data/Temporary/Development/Cache/Code…r_gw2challenges_Controller_ChallengeController.php", 43, array|2|)
+11 schilter\gw2challenges\Controller\ChallengeController_Original::listAction()
+10 call_user_func_array(array|2|, array|0|)
+9 Neos\Flow\Mvc\Controller\ActionController_Original::callActionMethod()
+8 Neos\Flow\Mvc\Controller\ActionController_Original::processRequest(Neos\Flow\Mvc\ActionRequest, Neos\Flow\Http\Response)
+7 Neos\Flow\Mvc\Dispatcher_Original::initiateDispatchLoop(Neos\Flow\Mvc\ActionRequest, Neos\Flow\Http\Response)
+6 Neos\Flow\Mvc\Dispatcher_Original::dispatch(Neos\Flow\Mvc\ActionRequest, Neos\Flow\Http\Response)
+5 Neos\Flow\Mvc\DispatchComponent_Original::handle(Neos\Flow\Http\Component\ComponentContext)
+4 Neos\Flow\Http\Component\ComponentChain_Original::handle(Neos\Flow\Http\Component\ComponentContext)
+3 Neos\Flow\Http\Component\ComponentChain_Original::handle(Neos\Flow\Http\Component\ComponentContext)
+2 Neos\Flow\Http\RequestHandler::handleRequest()
+1 Neos\Flow\Core\Bootstrap::run()
+
+HTTP REQUEST:
+GET /challenge/list HTTP/1.1
+Accept-Language: de-DE,de;q=0.8,en-US;q=0.6,en;q=0.4
+Accept-Encoding: gzip, deflate, sdch, br
+Referer: https://localhost/
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8
+User-Agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36
+Upgrade-Insecure-Requests: 1
+Connection: keep-alive
+Host: localhost
+Content-Length: 
+Content-Type: 
+
+
+
+HTTP RESPONSE:
+[response was empty]
+
+PHP PROCESS:
+Inode: 683221
+PID: 7
+UID: 1000
+GID: 1000
+User: 
